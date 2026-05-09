@@ -6,7 +6,7 @@ Real Laravel 11 project that serves the TequilaPOS public website.
 
 - **Laravel 11** routes, controllers, and Blade views with proper SEO meta per page (`/`, `/menu`, `/about`, `/login`, `/register`, `/account`, `/profile`).
 - The interactive UI (cart, menu, modifiers, checkout, auth, order tracking, profile editing, receipt PDF) is delivered as a precompiled bundle under `public/assets/`. This is the same UI you see in the Lovable preview — pixel-identical.
-- All business data is fetched directly from the **TequilaPOS API** (`https://tequilapos.net/api`) from the browser. Restaurant ID is auto-detected from the subdomain (defaults to `43` on localhost).
+- All business data is fetched directly from the **TequilaPOS API** (`https://tequilapos.net/api`) from the browser. Restaurant ID is auto-detected from the first subdomain label (for example, `tequilatexas` from `tequilatexas.tequilapos.com`) by calling `/website-restaurant-id/{subdomain}` and defaults to `43` on localhost or lookup failure.
 - No database is needed. Cart/auth state is persisted in `localStorage`.
 
 ## Setup
