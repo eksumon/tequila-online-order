@@ -1,0 +1,6 @@
+<article class="overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/70">
+    <img src="{{ $imageUrl($item['image'] ?? null) }}" alt="{{ $item['name'] }}" class="h-52 w-full object-cover">
+    <div class="p-5"><div class="flex items-start justify-between gap-3"><h3 class="font-serif text-2xl">{{ $item['name'] }}</h3><span class="text-amber-300">${{ number_format($item['min_price'] ?? $item['price'] ?? 0, 2) }}</span></div><p class="mt-3 line-clamp-3 text-sm text-stone-400">{{ $item['description'] }}</p>
+        @if($item['sold_out'])<p class="mt-4 text-sm text-red-300">Sold out</p>@else<form method="POST" action="{{ route('cart.add') }}" class="mt-5 space-y-3">@csrf<input type="hidden" name="item_id" value="{{ $item['id'] }}"><input type="hidden" name="quantity" value="1">@if(!empty($item['variants']))<select name="variant_id" class="w-full rounded bg-neutral-950 p-2 text-sm">@foreach($item['variants'] as $variant)<option value="{{ $variant['id'] }}">{{ $variant['name'] }} — ${{ number_format($variant['price'], 2) }}</option>@endforeach</select>@endif<button class="w-full rounded-full border border-amber-300 px-4 py-2 text-amber-300 hover:bg-amber-300 hover:text-neutral-950">Add to cart</button></form>@endif
+    </div>
+</article>

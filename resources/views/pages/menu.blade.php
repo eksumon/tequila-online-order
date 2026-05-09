@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
-{{-- Page rendered by Laravel route 'menu'. The TequilaPOS UI is mounted into #root above. --}}
+<section id="menu-page" class="mx-auto max-w-6xl px-4 py-12"><p class="text-sm uppercase tracking-[0.25em] text-amber-300">Order online</p><h1 class="mt-2 font-serif text-5xl">Menu</h1><nav class="mt-8 flex gap-3 overflow-x-auto pb-2" aria-label="Menu categories">@foreach($categories as $category)<a href="{{ route('menu',['category'=>$category['id']]) }}" class="whitespace-nowrap rounded-full border px-5 py-2 text-sm {{ (string)$activeCategory === (string)$category['id'] ? 'border-amber-300 bg-amber-300 text-neutral-950' : 'border-white/15 text-stone-300' }}">{{ $category['name'] ?? 'Category' }}</a>@endforeach</nav><div class="mt-10 grid gap-6 md:grid-cols-3">@forelse($items as $item)@include('partials.menu-card',['item'=>$item])@empty<p class="text-stone-400">No items are available in this category.</p>@endforelse</div></section>
 @endsection

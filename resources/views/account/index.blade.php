@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<section class="mx-auto max-w-4xl px-4 py-16"><h1 class="font-serif text-5xl">My Account</h1><div class="mt-8 grid gap-6 md:grid-cols-3"><a class="rounded-2xl border border-white/10 bg-neutral-900/60 p-6 hover:border-amber-300" href="{{ route('profile') }}"><h2 class="font-serif text-2xl">Profile</h2><p class="mt-2 text-sm text-stone-400">Manage name and email.</p></a><a class="rounded-2xl border border-white/10 bg-neutral-900/60 p-6 hover:border-amber-300" href="{{ route('orders') }}"><h2 class="font-serif text-2xl">Orders</h2><p class="mt-2 text-sm text-stone-400">View order history.</p></a><button @click="cartOpen=true" class="rounded-2xl border border-white/10 bg-neutral-900/60 p-6 text-left hover:border-amber-300"><h2 class="font-serif text-2xl">Cart</h2><p class="mt-2 text-sm text-stone-400">Review checkout.</p></button></div></section>
+@endsection
