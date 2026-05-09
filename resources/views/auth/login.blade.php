@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<section class="mx-auto max-w-md px-4 py-16"><h1 class="font-serif text-4xl">Sign in</h1><form method="POST" action="{{ route('login') }}" class="mt-8 space-y-4 rounded-2xl border border-white/10 bg-neutral-900/60 p-6">@csrf<label class="block text-sm">Mobile<input name="mobile" value="{{ old('mobile') }}" required class="mt-1 w-full rounded bg-neutral-950 p-3"></label><label class="block text-sm">Password<input name="password" type="password" required class="mt-1 w-full rounded bg-neutral-950 p-3"></label><button class="w-full rounded-full bg-amber-400 py-3 font-semibold text-neutral-950">Sign in</button><p class="text-center text-sm text-stone-400"><a class="text-amber-300" href="{{ route('register') }}">Create account</a> · <a class="text-amber-300" href="{{ route('password.forgot') }}">Forgot password?</a></p></form></section>
+@endsection

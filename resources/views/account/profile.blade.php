@@ -1,0 +1,4 @@
+@extends('layouts.app')
+@section('content')
+<section class="mx-auto max-w-md px-4 py-16"><h1 class="font-serif text-4xl">My Profile</h1><form method="POST" action="{{ route('profile') }}" class="mt-8 space-y-4 rounded-2xl border border-white/10 bg-neutral-900/60 p-6">@csrf<label class="block text-sm">Name<input name="name" value="{{ old('name', $customer['name'] ?? '') }}" required class="mt-1 w-full rounded bg-neutral-950 p-3"></label><label class="block text-sm">Email<input name="email" type="email" value="{{ old('email', $customer['email'] ?? '') }}" class="mt-1 w-full rounded bg-neutral-950 p-3"></label><label class="block text-sm">Mobile<input value="{{ $customer['mobile'] ?? $customer['phone'] ?? '' }}" disabled class="mt-1 w-full rounded bg-neutral-950/60 p-3 text-stone-500"></label><button class="w-full rounded-full bg-amber-400 py-3 font-semibold text-neutral-950">Save changes</button></form></section>
+@endsection
