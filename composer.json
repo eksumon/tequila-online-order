@@ -1,0 +1,22 @@
+{
+  "name": "tequilapos/website",
+  "type": "project",
+  "description": "TequilaPOS public restaurant website (Laravel 11 + React build).",
+  "require": {
+    "php": "^8.2",
+    "laravel/framework": "^11.0"
+  },
+  "autoload": {
+    "psr-4": { "App\\": "app/", "Database\\Factories\\": "database/factories/", "Database\\Seeders\\": "database/seeders/" }
+  },
+  "autoload-dev": { "psr-4": { "Tests\\": "tests/" } },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": { "optimize-autoloader": true, "sort-packages": true, "allow-plugins": { "pestphp/pest-plugin": true, "php-http/discovery": true } },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ]
+  }
+}
